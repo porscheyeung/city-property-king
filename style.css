@@ -48,3 +48,44 @@
 .has-3d .tile.current .name{text-shadow:0 0 2px #fff5d7,0 0 4px #fff5d7,0 0 6px #fff5d7}
 .has-3d .tile.built.occupied .price{visibility:hidden}
 @media(max-width:1050px){.center .city-art.is-3d{display:none}}
+
+/* Fullscreen button and board fitted to screen height (MacBook / iPad) */
+.fs-btn{display:inline-flex;align-items:center;gap:6px}
+.fs-btn svg{width:15px;height:15px;flex-shrink:0}
+@media(min-width:761px){
+body:has(main.layout){--hdr:64px;--legend:34px;--side:300px;--board:calc(100vh - var(--hdr) - var(--legend) - 14px)}
+@supports(height:100dvh){body:has(main.layout){--board:calc(100dvh - var(--hdr) - var(--legend) - 14px)}}
+body:has(main.layout) header{height:var(--hdr);padding-top:8px;padding-bottom:8px;max-width:calc(max(460px,var(--board)) + var(--side) + 72px)}
+body:has(main.layout) .brand-icon{width:42px;height:42px}
+body:has(main.layout) .brand-icon.is-3d img{width:36px;height:36px}
+.layout{max-width:none;grid-template-columns:minmax(0,max(460px,var(--board))) var(--side);justify-content:center;padding-bottom:12px}
+.board-legend{height:var(--legend);padding:8px 4px 0}
+.sidebar{position:sticky;top:8px;align-self:start;max-height:calc(100vh - var(--hdr) - 14px);max-height:calc(100dvh - var(--hdr) - 14px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.board{container-type:inline-size}
+.tile .name{font-size:clamp(8px,1.6cqi,14px)}
+}
+@media(min-width:761px) and (max-width:1050px){body:has(main.layout){--side:250px}}
+@media(min-width:761px) and (max-width:1100px) and (orientation:portrait){
+body:has(main.layout){--side:0px}
+body:has(main.layout) header{max-width:none}
+.layout{display:flex;flex-direction:column;align-items:center;gap:14px}
+.layout>div:first-child{width:min(100%,var(--board))}
+.sidebar{position:static;max-height:none;overflow:visible;width:min(100%,var(--board))}
+.sidebar .players-grid{display:grid;gap:10px}
+.tile .tokens .token{width:28px;height:31px}
+.tile .building-art{width:36px;height:36px}
+.tile .tile-icon:has(.building-art){height:32px}
+.board-legend{font-size:11px}
+.board-legend .building-art{width:22px;height:22px}
+.sidebar .players-grid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.turn-panel .center{padding:18px}
+.center .city-art,.center .city-art.is-3d{display:flex}
+.center p{font-size:14px}
+.center h2{font-size:28px}
+.center .pill{font-size:11px}
+.action-buttons{margin-top:12px;gap:8px}
+.action-buttons button{font-size:15px;padding:11px 18px;min-height:48px}
+.die.is-3d{width:56px;height:56px}
+}
+@media(max-width:760px){.fs-btn{padding:7px 10px}.fs-btn .fs-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+.setup-player{grid-template-columns:35px minmax(0,1fr) minmax(80px,95px)}
