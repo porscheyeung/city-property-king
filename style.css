@@ -89,3 +89,66 @@ body:has(main.layout) header{max-width:none}
 }
 @media(max-width:760px){.fs-btn{padding:7px 10px}.fs-btn .fs-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 .setup-player{grid-template-columns:35px minmax(0,1fr) minmax(80px,95px)}
+
+/* Landscape laptop / iPad: stretch board to use screen width, larger type */
+@media(min-width:1051px) and (orientation:landscape){
+body:has(main.layout){--side:clamp(330px,25vw,460px);--boardw:min(calc(100vw - var(--side) - 72px),calc(var(--board) * 1.85));--fs:calc(var(--board) / 38)}
+body:has(main.layout) header{max-width:calc(var(--boardw) + var(--side) + 72px)}
+.layout{grid-template-columns:minmax(0,var(--boardw)) var(--side)}
+.board{aspect-ratio:auto;height:calc(var(--board) - 30px);container-type:normal}
+.tile{padding-top:10px;gap:0}
+.tile .name{font-size:clamp(12px,min(var(--fs),calc(var(--boardw) / 47)),21px);line-height:1.2}
+.tile .price{font-size:clamp(12px,calc(var(--fs) * .85),17px);line-height:1.2}
+.tile .tile-icon{font-size:clamp(17px,calc(var(--fs) * 1.35),30px);line-height:1.1}
+.tile .band{height:8px}
+.center h2{font-size:clamp(30px,calc(var(--fs) * 2.6),46px)}
+.center p{font-size:clamp(16px,calc(var(--fs) * 1.15),20px)}
+.center .pill{font-size:clamp(14px,calc(var(--fs) * .95),17px)}
+.center .eyebrow{font-size:clamp(11px,calc(var(--fs) * .8),14px)}
+.center .helptext{font-size:clamp(13px,var(--fs),16px)}
+.center .actionbox{max-width:min(600px,90%)}
+.action-buttons button{font-size:clamp(17px,calc(var(--fs) * 1.2),21px);min-height:50px;padding:12px 24px}
+.board-city>span:last-child{font-size:clamp(13px,var(--fs),16px)}
+.board-legend{font-size:clamp(13px,calc(var(--fs) * .9),15px)}
+.panel{padding:18px 20px}
+.panel h2{font-size:clamp(18px,1.35vw,22px)}
+.player-head{font-size:clamp(17px,1.3vw,21px)}
+.player-head .muted,.money .muted{font-size:clamp(14px,1vw,16px)}
+.money{font-size:clamp(28px,2.2vw,38px)}
+.subrow{font-size:clamp(14px,1.05vw,17px);line-height:1.6}
+.player.active:before{font-size:14px}
+.muted{font-size:14px}
+.logs{font-size:clamp(15px,1.05vw,17px);line-height:1.7;max-height:none}
+.tools button{font-size:15px;padding:9px 14px}
+.speed{font-size:15px;gap:6px}
+.speed input{width:20px;min-height:20px}
+}
+@media(min-width:1051px) and (orientation:landscape) and (max-height:800px){
+.center .city-art,.center .city-art.is-3d,.center .eyebrow{display:none}
+.turn-panel .center{padding:10px 16px}
+.center h2{font-size:clamp(26px,calc(var(--fs) * 2.1),38px);margin:4px 0}
+.center p{margin:3px 0}
+.center .dice{margin:4px 0}
+.die.is-3d{width:52px;height:52px}
+.action-buttons{margin-top:8px}
+}
+@media(min-width:761px) and (max-width:1100px) and (orientation:portrait){
+.tile .name{font-size:clamp(12px,2.2cqi,17px);line-height:1.2}
+.tile .price{font-size:clamp(11px,1.75cqi,14px)}
+.tile .tile-icon{font-size:clamp(16px,3cqi,24px)}
+.center h2{font-size:32px}
+.center p{font-size:17px}
+.center .pill{font-size:14px}
+.center .helptext{font-size:15px}
+.action-buttons button{font-size:17px}
+.board-legend{font-size:14px}
+.panel h2{font-size:18px}
+.player-head{font-size:17px}
+.player-head .muted,.money .muted{font-size:14px}
+.money{font-size:30px}
+.subrow{font-size:14px;line-height:1.6}
+.player.active:before{font-size:13px}
+.logs{font-size:16px;line-height:1.7}
+.tools button{font-size:15px}
+.speed{font-size:15px}
+}

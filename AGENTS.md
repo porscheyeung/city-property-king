@@ -9,3 +9,5 @@
 棋盤 3D 模型由 board3d.js 以透明 WebGL 畫布疊在棋盤上：app.js 仍輸出 `.token[data-player]`、`.building-art[data-level]` 空槽，board3d.js 依其位置用正交鏡頭投影到地面；改棋盤排版後要檢查模型對位。pieceArt／buildingArt 在 3D 可用時輸出縮圖，否則保留 SVG 後備，不可移除。vendor/three.min.js 由 tools/three-entry.js 打包。棋子顏色與玩家卡及持有人標記對應；桌面回合操作覆於棋盤中央，760px 以下移至棋盤下方。保留動畫重繪 turn-panel 的流程及減少動態效果支援。
 
 761px 以上棋盤邊長由 style.css 末段 `--board`（100dvh 減頂部列與圖例）決定，令整個棋盤留在一屏內；761–1100px 直向為上下排列。改頂部列或圖例高度須同步 `--hdr`／`--legend`。全螢幕按鈕在 header()，click 處理放在 busy 檢查之前，F 鍵切換。
+
+1051px 以上橫向（MacBook／iPad 橫向）棋盤不再是正方形：寬度 `--boardw`（最多 `--board`×1.85）用盡螢幕闊度，側欄 `--side` 隨螢幕寬度 330–460px；字體以 `--fs`（棋盤高度÷38）縮放。高度 800px 以下會隱藏中央城市插圖與英文標語，確保操作按鈕不被裁切。3D 對位以畫面位置計算，可支援長方形棋盤。
