@@ -6,4 +6,4 @@
 
 規則運算集中 engine.js，資料在 data.js，UI 在 app.js；所有遊戲資金及所有權改動透過 dispatch。動畫只呈現已存檔結果。改規則後跑 npm test，介面變更補瀏覽器驗證。經典模式無時間上限，不宣稱必定在固定回合完局或已通過真實 Safari／iPad 測試。
 
-介面使用 app.js 的 pieceArt／buildingArt 產生 SVG 立體插畫，棋子顏色與玩家卡及持有人標記對應；桌面回合操作覆於棋盤中央，760px 以下移至棋盤下方。保留動畫重繪 turn-panel 的流程及減少動態效果支援。
+棋盤 3D 模型由 board3d.js 以透明 WebGL 畫布疊在棋盤上：app.js 仍輸出 `.token[data-player]`、`.building-art[data-level]` 空槽，board3d.js 依其位置用正交鏡頭投影到地面；改棋盤排版後要檢查模型對位。pieceArt／buildingArt 在 3D 可用時輸出縮圖，否則保留 SVG 後備，不可移除。vendor/three.min.js 由 tools/three-entry.js 打包。棋子顏色與玩家卡及持有人標記對應；桌面回合操作覆於棋盤中央，760px 以下移至棋盤下方。保留動畫重繪 turn-panel 的流程及減少動態效果支援。

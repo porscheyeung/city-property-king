@@ -10,3 +10,41 @@
 
 @media(min-width:1051px){.layout{max-width:1240px;grid-template-columns:minmax(0,1fr) 300px;padding:0 24px 28px}header{max-width:1240px;padding:20px 24px}.center h2{font-size:28px}}
 @media(max-width:760px){.tile.built.occupied .tile-icon{display:block;position:absolute;right:0;top:6px;width:14px;height:14px}.tile.built.occupied .building-art{width:17px;height:17px;margin:0}.tile.built.occupied .name{padding-right:8px}.tile:focus-visible{outline:3px solid #2a6471;outline-offset:1px}}
+
+/* 3D 模式：WebGL 疊加層繪製棋子與建築，原位置保留為定位用空槽 */
+.board-wrap{position:relative}
+.board3d{position:absolute;left:0;top:-70px;width:100%;height:calc(100% + 70px);pointer-events:none;z-index:6}
+.turn-panel{z-index:5}
+.mobile-turn{z-index:10}
+.has-3d .tile .token{filter:none}
+.has-3d .active-token:after{display:none}
+.piece-art.is-3d img,.building-art.is-3d img{display:block;width:100%;height:100%;object-fit:contain}
+.piece-art.is-3d{width:44px;height:44px}
+.player-head .piece-art.is-3d{width:34px;height:34px}
+.setup-player .piece-art.is-3d{width:40px;height:40px}
+.mobile-turn .piece-art.is-3d{width:32px;height:32px}
+.center h2 .piece-art,.ranking .piece-art{width:1.5em;height:1.5em;vertical-align:-.35em}
+.die.is-3d{background:none;border:0;box-shadow:none;width:58px;height:58px}
+.die.is-3d img{width:100%;height:100%;filter:drop-shadow(0 4px 3px #173b4330)}
+.rolling .die.is-3d{animation:tumble .18s infinite}
+@keyframes tumble{25%{transform:rotate(-14deg) translateY(-6px)}75%{transform:rotate(12deg) translateY(-3px)}}
+.city-art.is-3d{display:block;height:auto;opacity:1;transform:none;object-fit:contain}
+.hero .city-art.is-3d{width:min(460px,100%);margin:18px 0 6px;transform:none}
+.center .city-art.is-3d{width:150px;height:auto;margin:0 0 2px;transform:none}
+.center .city-art:not(.is-3d){margin:8px 0 0}
+.board-city .city-art.is-3d{width:min(330px,62%);margin:0;transform:none}
+.brand-icon.is-3d{background:linear-gradient(145deg,#e9f0e4,#d2dfcf);box-shadow:inset 0 0 0 1px #c3d2c0}
+.brand-icon.is-3d img{width:42px;height:42px}
+.board-legend .building-art.is-3d{width:28px;height:28px}
+.asset-heading .building-art.is-3d{width:44px;height:44px}
+@media(max-width:1050px){.die.is-3d{width:46px;height:46px}}
+@media(max-width:760px){.die.is-3d{width:48px;height:48px}.board-city .city-art.is-3d{width:72%;transform:none;margin:0}.brand-icon.is-3d{display:none}.board3d{top:-40px;height:calc(100% + 40px)}}
+.has-3d .tile.occupied:not(.built) .tile-icon{display:none}
+.has-3d .tile.occupied{padding-bottom:40px;justify-content:flex-start;padding-top:16px}
+@media(max-width:1050px){.has-3d .tile.occupied{padding-bottom:28px;padding-top:12px}}
+@media(max-width:760px){.has-3d .tile.occupied{padding-bottom:16px;padding-top:9px}}
+.has-3d .tile,.has-3d .tile:hover,.has-3d .tile.current{z-index:auto}
+.has-3d .tile .name{position:relative;z-index:7;text-shadow:0 0 2px #fffdf7,0 0 4px #fffdf7,0 0 6px #fffdf7}
+.has-3d .tile.current .name{text-shadow:0 0 2px #fff5d7,0 0 4px #fff5d7,0 0 6px #fff5d7}
+.has-3d .tile.built.occupied .price{visibility:hidden}
+@media(max-width:1050px){.center .city-art.is-3d{display:none}}
