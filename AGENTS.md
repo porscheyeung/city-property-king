@@ -11,3 +11,5 @@
 761px 以上棋盤邊長由 style.css 末段 `--board`（100dvh 減頂部列與圖例）決定，令整個棋盤留在一屏內；761–1100px 直向為上下排列。改頂部列或圖例高度須同步 `--hdr`／`--legend`。全螢幕按鈕在 header()，click 處理放在 busy 檢查之前，F 鍵切換。
 
 1051px 以上橫向（MacBook／iPad 橫向）棋盤不再是正方形：寬度 `--boardw`（最多 `--board`×1.85）用盡螢幕闊度，側欄 `--side` 隨螢幕寬度 330–460px；字體以 `--fs`（棋盤高度÷38）縮放。高度 800px 以下會隱藏中央城市插圖與英文標語，確保操作按鈕不被裁切。3D 對位以畫面位置計算，可支援長方形棋盤。
+
+回合引導 UI（2026-11-03）：center() 由 whobar（currentActor，非必然是 player(s)）、stepper、recapBlock、地契卡 deed()、tradeReview() 組成；recap／deltas 只存於記憶體（不入存檔），在 act() 以 freshLogs 比對新舊 logs 產生，真人按「開始回合」時清除自己的紀錄，deltas 在真人操作時重設。chip()／logLine() 依 engine 的 log 格式（`名稱 ±金額｜原因`、`擲出 a + b = n`）解析；改 engine log 文字須同步。Enter 鍵觸發中央第一個非 secondary 按鈕。

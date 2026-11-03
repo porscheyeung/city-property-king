@@ -152,3 +152,117 @@ body:has(main.layout) header{max-width:calc(var(--boardw) + var(--side) + 72px)}
 .tools button{font-size:15px}
 .speed{font-size:15px}
 }
+/* UX 2026-11：回合引導、地契卡、剛才發生、收支提示 */
+.turn-panel .center{justify-content:flex-start;gap:6px;padding:14px 18px;text-align:center}
+.turn-panel .center>.city-art,.turn-panel .center>.eyebrow{display:none}
+.whobar{display:flex;align-items:center;gap:8px;width:100%;max-width:560px;background:#fff;border:1px solid #d7dfd2;border-left:6px solid var(--player);border-radius:12px;padding:5px 10px;font-size:calc(var(--fs,14px)*1.05);text-align:left}
+.whobar .piece-art{width:30px;height:30px;flex:none}
+.whobar strong{font-size:1.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.whobar>span:not(.dice){color:#5d7670;font-size:.9em;white-space:nowrap}
+.whobar .dice{margin:0 0 0 auto;gap:5px;align-items:center}
+.whobar .die,.whobar .die.is-3d{width:34px;height:34px;font-size:24px;border-radius:8px;box-shadow:0 3px 0 #c9d4c8}
+.whobar .dice em{font-style:normal;font-weight:800;font-size:1.15em;color:#173f46;min-width:1.6em;text-align:right}
+.ai-turn .whobar{background:#f3f6f1}
+.stepper{display:flex;list-style:none;margin:2px 0;padding:0;gap:4px;width:100%;max-width:560px}
+.stepper li{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;font-size:calc(var(--fs,14px)*.82);color:#8a9a92;padding:4px 2px;border-bottom:3px solid #d8e0d5;white-space:nowrap}
+.stepper b{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:#e2e8df;font-size:.85em;color:#6c7f78;flex:none}
+.stepper li.done{color:#3f6b5d;border-color:#7fa896}
+.stepper li.done b{background:#7fa896;color:#fff}
+.stepper li.now{color:#173f46;font-weight:800;border-color:#d4a64a}
+.stepper li.now b{background:#d4a64a;color:#fff}
+.recap{width:100%;max-width:560px;background:#fffaf0;border:1px solid #eadcb8;border-radius:12px;padding:6px 10px;text-align:left;display:flex;flex-direction:column;gap:4px}
+.recap.mine{flex-direction:row;align-items:center;gap:8px;background:#f7f9f4;border-color:#dbe3d6}
+.recap-title{font-size:calc(var(--fs,14px)*.78);font-weight:800;color:#8a6d2c;letter-spacing:.05em;white-space:nowrap}
+.recap.mine .recap-title{color:#5d7a6f}
+.recap-row{display:flex;align-items:flex-start;gap:8px;border-left:4px solid var(--player);padding-left:6px}
+.recap-who{display:flex;align-items:center;gap:3px;font-weight:800;font-size:calc(var(--fs,14px)*.88);white-space:nowrap}
+.recap-who .piece-art{width:22px;height:22px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{display:inline-flex;align-items:center;gap:5px;background:#fff;border:1px solid #dbe2d6;border-radius:999px;padding:1px 9px;font-size:calc(var(--fs,14px)*.85);line-height:1.6;color:#36565a}
+.chip b{font-weight:800}
+.chip.gain{border-color:#9fd0b4;background:#eef9f2}.chip.gain b{color:#1d7a4c}
+.chip.loss{border-color:#efb7aa;background:#fdf1ee}.chip.loss b{color:#b3412f}
+.chip.roll-chip{background:#eef3f6;border-color:#c9d8e0}
+.center h2{margin:4px 0 2px}
+.center p.desc{margin:2px 0;color:#41605f;font-size:calc(var(--fs,14px)*1.02);line-height:1.6}
+.center p.desc b{color:#173f46}
+b.gain,.gain{color:#1d7a4c}b.loss,.loss{color:#b3412f}
+.deed{width:100%;max-width:420px;border:2px solid var(--g);border-radius:14px;background:#fff;overflow:hidden;text-align:left;box-shadow:0 5px 0 #173b4314}
+.deed-head{background:var(--g);color:#fff;padding:5px 12px;display:flex;align-items:baseline;gap:10px}
+.deed-head span{font-size:calc(var(--fs,14px)*.8);opacity:.92}
+.deed-head strong{font-size:calc(var(--fs,14px)*1.25)}
+.own-dots{margin-left:auto;display:flex;gap:4px;align-self:center}
+.own-dots i{width:14px;height:14px;border-radius:4px;background:#ffffff55;border:2px solid #fff}
+.own-dots i.self{outline:2px solid #173f46;outline-offset:1px}
+.deed-body{display:flex;align-items:stretch;gap:10px;padding:7px 12px}
+.deed-price{display:flex;flex-direction:column;justify-content:center;padding-right:10px;border-right:1px solid #e3e8df}
+.deed-price small,.deed-rents small{font-size:calc(var(--fs,14px)*.72);color:#7c8d84;display:block}
+.deed-price b{font-size:calc(var(--fs,14px)*1.45)}
+.deed-rents{display:flex;flex:1;gap:4px}
+.deed-rents span{flex:1;text-align:center;border-radius:8px;background:#f4f6f1;padding:3px 2px;font-weight:700;font-size:calc(var(--fs,14px)*1.02)}
+.deed-rents span.on{background:var(--g);color:#fff}.deed-rents span.on small{color:#fff}
+.deed-foot{font-size:calc(var(--fs,14px)*.78);color:#5d7670;padding:4px 12px 6px;border-top:1px dashed #e0e6dc}
+.event-card{width:100%;max-width:340px;border-radius:14px;padding:10px 14px;background:linear-gradient(140deg,#fff8e4,#f7e7bd);border:2px solid #d9b860;box-shadow:0 5px 0 #c9a24a55;display:flex;flex-direction:column;gap:2px}
+.event-card small{color:#8a6d2c;font-weight:700;letter-spacing:.1em}
+.event-card strong{font-size:calc(var(--fs,14px)*1.45);color:#4f3d12}
+.event-card span{font-size:calc(var(--fs,14px)*1.05);color:#5b4a1d}
+.auction-board{display:flex;gap:8px;width:100%;max-width:440px}
+.auction-board>div{flex:1;background:#fff;border:1px solid #dbe2d6;border-radius:12px;padding:6px 10px;text-align:left;display:flex;flex-direction:column}
+.auction-board .bidder{border-left:6px solid var(--player);background:#fffaf0}
+.auction-board small{font-size:calc(var(--fs,14px)*.75);color:#7c8d84}
+.auction-board b{font-size:calc(var(--fs,14px)*1.25);display:flex;align-items:center;gap:4px}
+.auction-board b .piece-art{width:26px;height:26px}
+.auction-board span{font-size:calc(var(--fs,14px)*.8);color:#5d7670}
+.quick-bids{display:flex;gap:6px;width:100%;justify-content:center}
+.quick-bids .mini{min-height:34px;padding:4px 14px;font-size:.9em}
+.debt-box{width:100%;max-width:420px;background:#fff;border:1px solid #efc2b6;border-radius:12px;padding:8px 12px;text-align:left}
+.debt-line{display:flex;justify-content:space-between;gap:8px;font-size:calc(var(--fs,14px)*.95)}
+.meter{height:10px;border-radius:6px;background:#f3e0da;margin:6px 0;overflow:hidden}
+.meter i{display:block;height:100%;background:linear-gradient(90deg,#d97a5e,#e3ac48);border-radius:6px}
+.trade-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:520px;text-align:left}
+.trade-cols section{background:#fff;border:1px solid #dbe2d6;border-radius:12px;padding:6px 10px}
+.trade-cols .get{border-top:4px solid #3e9a6a}.trade-cols .give{border-top:4px solid #c25a45}
+.trade-cols h3{margin:0 0 4px;font-size:calc(var(--fs,14px)*.9)}
+.trade-cols ul{list-style:none;margin:0;padding:0;font-size:calc(var(--fs,14px)*.95)}
+.trade-cols li{display:flex;align-items:center;gap:6px;padding:2px 0}
+.trade-cols li i{width:12px;height:12px;border-radius:3px;flex:none}
+.trade-cols li.cash i{background:#e3b64a;border-radius:50%}
+.trade-cols li small{margin-left:auto;color:#7c8d84}
+.trade-cols li.none{color:#8a9a92}
+.trade-after,.trade-note{margin:2px 0!important;font-size:calc(var(--fs,14px)*.9)!important}
+.trade-note{color:#8a5a12!important;font-weight:700}
+.ai-status{display:flex;align-items:center;justify-content:center;gap:8px;margin:6px 0 0!important;font-weight:700;color:#36565a!important}
+.dots{display:inline-flex;gap:3px}.dots i{width:6px;height:6px;border-radius:50%;background:#5f8a7c;animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes blink{50%{opacity:.25}}
+.ai-turn .actionbox .action-buttons{opacity:.45}
+.center .action-buttons.manage{margin-top:4px}
+.badge{font-style:normal;background:#d4a64a;color:#fff;border-radius:999px;padding:0 7px;margin-left:6px;font-size:.8em}
+@media(hover:hover) and (min-width:761px){.center .actionbox .action-buttons button:not(.secondary):not(.danger)::after{content:'Enter ↵';margin-left:8px;font-size:.66em;font-weight:600;opacity:.6;border:1px solid #ffffff70;border-radius:5px;padding:0 4px;vertical-align:middle}}
+.tile.owned{background:linear-gradient(180deg,color-mix(in srgb,var(--owner) 10%,#fffef9),color-mix(in srgb,var(--owner) 20%,#f1efe4));box-shadow:inset 0 -5px 0 var(--owner),0 3px 0 #c3cabc}
+.tile.current{background:#fff5d7}
+.tile.mortgaged{filter:grayscale(.6);opacity:.8}
+.tile.trail{background:#fff1c7;box-shadow:inset 0 0 0 3px #e5c164,0 3px 0 #c3cabc}
+.tile.ahead{box-shadow:inset 0 0 0 2px #e5c16488,0 3px 0 #c3cabc}
+.tile.dest{box-shadow:inset 0 0 0 3px #d4a64a,0 0 0 3px #d4a64a66;animation:pulse-dest .6s infinite alternate}
+@keyframes pulse-dest{to{box-shadow:inset 0 0 0 3px #d4a64a,0 0 0 7px #d4a64a22}}
+.money{position:relative}
+.delta{display:inline-block;margin-left:8px;font-size:.5em;font-weight:800;padding:1px 8px;border-radius:999px;vertical-align:middle;animation:pop .5s ease-out}
+.delta.up{background:#e3f5ea;color:#1d7a4c}.delta.down{background:#fbe6e1;color:#b3412f}
+@keyframes pop{0%{transform:translateY(8px) scale(.8);opacity:0}100%{transform:none;opacity:1}}
+.group-progress{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.group-progress span{font-size:12px;font-weight:700;padding:1px 7px;border-radius:999px;border:1.5px solid var(--g);color:var(--g);background:#fff}
+.group-progress span.full{background:var(--g);color:#fff}
+.logs p{border-left:4px solid var(--who,#ccd);padding-left:8px}
+.logs p .gain,.logs p .loss{font-weight:800}
+.logs p:first-child{font-weight:inherit}
+.player.active{box-shadow:0 0 0 2px var(--player),0 6px 18px #173b4318}
+@media(max-width:760px){.turn-panel .center{padding:12px 10px;gap:6px}.whobar{font-size:14px}.stepper li{font-size:11px}.stepper li span{display:none}.stepper li.now span{display:inline}.chip{font-size:12px}.recap-title,.recap-who{font-size:12px}.deed-head strong{font-size:17px}.deed-rents span{font-size:13px}.deed-price b{font-size:18px}.center p.desc{font-size:14px}.trade-cols{grid-template-columns:1fr}.trade-cols ul,.debt-line{font-size:13px}.event-card strong{font-size:19px}.deed-foot,.deed-head span,.auction-board small,.auction-board span{font-size:11px}.auction-board b{font-size:16px}.group-progress span{font-size:11px}}
+@media(min-width:761px) and (max-width:1100px) and (orientation:portrait){.whobar,.stepper li,.chip,.center p.desc{font-size:15px}}
+@media(min-width:1051px) and (orientation:landscape) and (max-height:800px){.turn-panel .center{gap:4px;padding:8px 14px}.deed-foot{display:none}}
+.phase-auction .stepper{display:none}
+.quick-bids{width:auto}
+.phase-auction .action-buttons{align-items:center}
+.mobile-turn{border-left:6px solid var(--player,#d4a64a)}
+@media(min-width:761px) and (max-width:1100px) and (orientation:portrait){.turn-panel .center{--fs:16px}}
+.ranking li{font-size:calc(var(--fs,14px)*1.1);padding:8px 12px}
