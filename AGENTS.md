@@ -2,7 +2,7 @@
 
 原創純前端置業棋盤遊戲，GitHub `porscheyeung/city-property-king`，正式網址 https://porscheyeung.github.io/city-property-king/ 。先讀 README.md 與 docs/TEST-RESULTS.md。
 
-保留 main 根目錄 GitHub Pages、相對資源路徑、本機存檔鍵 `city-property-king.v1`、至少一名真人、2–4 人及快速／經典模式。不得加入後端或改動其他網站。存檔格式變更須提供遷移或明確版本提示。
+保留 main 根目錄 GitHub Pages、相對資源路徑、本機存檔鍵 `city-property-king.v1`、至少一名真人、2–4 人及小小市長／快速／經典模式。不得加入後端或改動其他網站。存檔格式變更須提供遷移或明確版本提示。
 
 規則運算集中 engine.js，資料在 data.js，UI 在 app.js；所有遊戲資金及所有權改動透過 dispatch。動畫只呈現已存檔結果。改規則後跑 npm test，介面變更補瀏覽器驗證。經典模式無時間上限，不宣稱必定在固定回合完局或已通過真實 Safari／iPad 測試。
 
@@ -13,3 +13,5 @@
 1051px 以上橫向（MacBook／iPad 橫向）棋盤不再是正方形：寬度 `--boardw`（最多 `--board`×1.85）用盡螢幕闊度，側欄 `--side` 隨螢幕寬度 330–460px；字體以 `--fs`（棋盤高度÷38）縮放。高度 800px 以下會隱藏中央城市插圖與英文標語，確保操作按鈕不被裁切。3D 對位以畫面位置計算，可支援長方形棋盤。
 
 回合引導 UI（2026-11-03）：center() 由 whobar（currentActor，非必然是 player(s)）、stepper、recapBlock、地契卡 deed()、tradeReview() 組成；recap／deltas 只存於記憶體（不入存檔），在 act() 以 freshLogs 比對新舊 logs 產生，真人按「開始回合」時清除自己的紀錄，deltas 在真人操作時重設。chip()／logLine() 依 engine 的 log 格式（`名稱 ±金額｜原因`、`擲出 a + b = n`）解析；改 engine log 文字須同步。Enter 鍵觸發中央第一個非 secondary 按鈕。
+
+小小市長（2026-11-04）為開局預設 `mode=junior`：12 回合、無拍賣交易抵押拘留雙骰加擲、一般土地獨立蓋一級小屋、費用最多付現有現金且不出局、總分按土地和建築全額加現金。`tileName`／`cardFor` 在 data.js 集中新舊模式的地名及卡牌文字，ID 與效果不變；`turnLimit` 集中回合限制，原 quick/classic 規則與舊存檔仍保留。UI 由 juniorCenter／juniorSidebar／juniorAssets／juniorTile／juniorRules 分流，紀錄只按需展示；手機操作排在棋盤前。改金額或規則須同步兩種說明，不能把進階的半價建築計分套入 junior。`tests/junior.test.js` 覆蓋新規則及批次模擬；`tools/browser-qa.mjs` 透過現有本機 Chromium CDP 測試版面、建屋、續玩與 SVG 後備，會覆寫本機測試來源的存檔，勿指向正式網站或使用者瀏覽器。

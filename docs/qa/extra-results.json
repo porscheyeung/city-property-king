@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "fullscreenButton": true,
+  "fullscreenKeyboard": true,
+  "touchStartAtDPR2": true,
+  "enterRoll": true,
+  "thumbnailDisposal": {
+    "baseline": {
+      "board": {
+        "geometries": 0,
+        "textures": 0
+      },
+      "thumbnails": {
+        "geometries": 0,
+        "textures": 1
+      },
+      "cachedThumbnails": 6
+    },
+    "board": {
+      "geometries": 0,
+      "textures": 0
+    },
+    "thumbnails": {
+      "geometries": 0,
+      "textures": 1
+    },
+    "cachedThumbnails": 40
+  },
+  "blockedStoragePlayable": true,
+  "corruptStorageExplained": true
+}

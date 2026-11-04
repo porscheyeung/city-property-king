@@ -1,0 +1,285 @@
+{
+  "browser": "Playwright WebKit 27.2 on Linux, simulated mobile/touch DPR2",
+  "cases": [
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "handoff"
+    },
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "roll"
+    },
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "buy"
+    },
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "card"
+    },
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "end"
+    },
+    {
+      "width": 1470,
+      "height": 830,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "over"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "handoff"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "roll"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "buy"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "card"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "end"
+    },
+    {
+      "width": 1180,
+      "height": 820,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "over"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "handoff"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "roll"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "buy"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "card"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "end"
+    },
+    {
+      "width": 820,
+      "height": 1180,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "over"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "handoff"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "roll"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "buy"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "card"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "end"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "over"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "handoff"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "roll"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "buy"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "card"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "end"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "primaryVisible": true,
+      "canvas": 1,
+      "panelScroll": false,
+      "phase": "over"
+    }
+  ],
+  "fullGame": {
+    "players": 3,
+    "turns": [
+      12,
+      12,
+      12
+    ],
+    "humanClicks": 41
+  },
+  "errors": []
+}
